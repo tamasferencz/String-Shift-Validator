@@ -17,17 +17,23 @@ function stringShiftValidator(orig, final){
     return false;
 }
 
-console.log(stringShiftValidator('details', 'tailsde')); // true
-console.log(stringShiftValidator('limits', 'litims')); // false
-console.log(stringShiftValidator('finals', 'inalsf')); // true
-console.log(stringShiftValidator('abcde', 'abcde')); // true
-console.log(stringShiftValidator('abc', 'abcd')); // false
-console.log(stringShiftValidator('a', 'a')); // true
-console.log(stringShiftValidator('a', 'b')); // false
-console.log(stringShiftValidator('aaaaa', 'aaaaa')); // true
-console.log(stringShiftValidator('hello', 'ohell')); // true
-console.log(stringShiftValidator('ababab', 'bababa')); // true
-console.log(stringShiftValidator('listen', 'silent')); // false
-console.log(stringShiftValidator('abcde', 'abced')); // false
-console.log(stringShiftValidator('ab', 'ba')); // true
-console.log(stringShiftValidator('javascript', 'scriptjava')); // true
+function stringShiftValidator2(orig, final){
+     return orig.length === final.length && orig.concat(orig).includes(final);
+}
+
+
+// Test cases for first & second solution
+console.log(stringShiftValidator('details', 'tailsde') + ", expected: true"); // true
+console.log(stringShiftValidator('limits', 'litims') + ", expected: false"); // false
+console.log(stringShiftValidator('finals', 'inalsf') + ", expected: true"); // true
+console.log(stringShiftValidator('abcde', 'abcde') + ", expected: true"); // true
+console.log(stringShiftValidator('abc', 'abcd') + ", expected: false"); // false
+console.log(stringShiftValidator('a', 'a') + ", expected: true"); // true
+console.log(stringShiftValidator('a', 'b') + ", expected: false"); // false
+console.log(stringShiftValidator2('aaaaa', 'aaaaa') + ", expected: true"); // true
+console.log(stringShiftValidator2('hello', 'ohell') + ", expected: true"); // true
+console.log(stringShiftValidator2('ababab', 'bababa') + ", expected: true"); // true
+console.log(stringShiftValidator2('listen', 'silent') + ", expected: false"); // false
+console.log(stringShiftValidator2('abcde', 'abced') + ", expected: false"); // false
+console.log(stringShiftValidator2('ab', 'ba') + ", expected: true"); // true
+console.log(stringShiftValidator2('javascript', 'scriptjava') + ", expected: true"); // true
