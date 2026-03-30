@@ -21,7 +21,6 @@ function stringShiftValidator2(orig, final){
      return orig.length === final.length && orig.concat(orig).includes(final);
 }
 
-
 // Test cases for first & second solution
 console.log(stringShiftValidator('details', 'tailsde') + ", expected: true"); // true
 console.log(stringShiftValidator('limits', 'litims') + ", expected: false"); // false
