@@ -1,6 +1,10 @@
 function stringShiftValidator(orig, final){
     const charArr = orig.split('');
 
+    if (orig.length !== final.length){
+        return false;
+    }
+
     if(orig === final){
         return true;
     }
@@ -8,7 +12,6 @@ function stringShiftValidator(orig, final){
     for(let i = 0; i < charArr.length; i++){
         const firstElement = charArr.shift();
         charArr.push(firstElement);
-        //console.log(charArr);
 
         if(charArr.join('') === final){
             return true;
@@ -21,7 +24,8 @@ function stringShiftValidator2(orig, final){
      return orig.length === final.length && orig.concat(orig).includes(final);
 }
 
-// Test cases for first & second solution
+// ----- Test cases for first & second solution -----
+
 console.log(stringShiftValidator('details', 'tailsde') + ", expected: true"); // true
 console.log(stringShiftValidator('limits', 'litims') + ", expected: false"); // false
 console.log(stringShiftValidator('finals', 'inalsf') + ", expected: true"); // true
